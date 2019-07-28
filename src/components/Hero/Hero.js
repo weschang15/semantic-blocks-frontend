@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Illustration from "../../images/hero-illustration.svg";
 import { darken, transparentize, lighten } from "polished";
-import { Anchor } from "../../elements/Links";
-import { Section } from "../../elements";
+import { Anchor, Section } from "../../elements";
+import theme from "../../utils/theme";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
@@ -122,36 +122,38 @@ const Footnote = styled.small`
 
 function Hero() {
   return (
-    <Section>
-      <Container>
-        <Grid>
-          <Content>
-            <Title>
-              <Underlined>Semantic</Underlined>
-              <br />
-              <Underlined reversed>Blocks</Underlined>
-            </Title>
-            <Copy>
-              Gutenberg Blocks optimized for on-page SEO and Structured Data.
-            </Copy>
-            <DownloadLink
-              href="https://github.com/weschang15/semantic-blocks/raw/v0.0.2/semantic-blocks.zip"
-              download
-            >
-              Download Now
-            </DownloadLink>
-            <Anchor to="/#demo">Watch a demo</Anchor>
-            <Footnote>Currently in beta...</Footnote>
-          </Content>
-          <Figure>
-            <img
-              src={Illustration}
-              alt="Easy WordPress page customizations with Semantic Blocks"
-            />
-          </Figure>
-        </Grid>
-      </Container>
-    </Section>
+    <ThemeProvider theme={theme}>
+      <Section>
+        <Container>
+          <Grid>
+            <Content>
+              <Title>
+                <Underlined>Semantic</Underlined>
+                <br />
+                <Underlined reversed>Blocks</Underlined>
+              </Title>
+              <Copy>
+                Gutenberg Blocks optimized for on-page SEO and Structured Data.
+              </Copy>
+              <DownloadLink
+                href="https://github.com/weschang15/semantic-blocks/raw/v0.0.2/semantic-blocks.zip"
+                download
+              >
+                Download Now
+              </DownloadLink>
+              <Anchor to="/#demo">Watch a demo</Anchor>
+              <Footnote>Currently in beta...</Footnote>
+            </Content>
+            <Figure>
+              <img
+                src={Illustration}
+                alt="Easy WordPress page customizations with Semantic Blocks"
+              />
+            </Figure>
+          </Grid>
+        </Container>
+      </Section>
+    </ThemeProvider>
   );
 }
 

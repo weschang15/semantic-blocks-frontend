@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { Section } from "../../elements";
-import Icons from "../../elements/Icons";
+import styled, { ThemeProvider } from "styled-components";
+import { Icons, Section } from "../../elements";
+import theme from "../../utils/theme";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.lightestGray};
@@ -45,60 +45,62 @@ const IconGridItemCopy = styled.p`
 
 function Features() {
   return (
-    <Section>
-      <Container>
-        <Header>
-          <h2>Build rich user experiences</h2>
-          <HeaderCopy>
-            Semantic Blocks provide highly customizable atomic components to let
-            you build your WordPress pages exactly how you want.
-          </HeaderCopy>
-        </Header>
-        <IconGrid>
-          <IconGridItem>
-            <IconGridItemIcon>
-              <Icons name="formatting" />
-            </IconGridItemIcon>
-            <h4>Better Formatting</h4>
-            <IconGridItemCopy>
-              Semantic Blocks introduces the missing formatting tools that every
-              content writer needs, start highlighting, superscripting,
-              subscripting and more, hassle-free.
-            </IconGridItemCopy>
-          </IconGridItem>
-          <IconGridItem>
-            <IconGridItemIcon>
-              <Icons name="structured-data" />
-            </IconGridItemIcon>
-            <h4>HTML5 Native</h4>
-            <IconGridItemCopy>
-              Start using next generation elements baked into HTML5 without
-              worrying about browser compatibility or extra code bloat.
-            </IconGridItemCopy>
-          </IconGridItem>
-          <IconGridItem>
-            <IconGridItemIcon>
-              <Icons name="developer-friendly" />
-            </IconGridItemIcon>
-            <h4>Developer Friendly</h4>
-            <IconGridItemCopy>
-              A weightless front-end architecture means you won't be struggling
-              to apply custom <code>CSS</code>.
-            </IconGridItemCopy>
-          </IconGridItem>
-          <IconGridItem>
-            <IconGridItemIcon>
-              <Icons name="pen-tool" />
-            </IconGridItemIcon>
-            <h4>Advanced Customizations</h4>
-            <IconGridItemCopy>
-              Design dropdowns, modals, heroes, and more to your heart's
-              content.
-            </IconGridItemCopy>
-          </IconGridItem>
-        </IconGrid>
-      </Container>
-    </Section>
+    <ThemeProvider theme={theme}>
+      <Section>
+        <Container>
+          <Header>
+            <h2>Build rich user experiences</h2>
+            <HeaderCopy>
+              Semantic Blocks provide highly customizable atomic components to
+              let you build your WordPress pages exactly how you want.
+            </HeaderCopy>
+          </Header>
+          <IconGrid>
+            <IconGridItem>
+              <IconGridItemIcon>
+                <Icons name="formatting" />
+              </IconGridItemIcon>
+              <h4>Better Formatting</h4>
+              <IconGridItemCopy>
+                Semantic Blocks introduces the missing formatting tools that
+                every content writer needs, start highlighting, superscripting,
+                subscripting and more, hassle-free.
+              </IconGridItemCopy>
+            </IconGridItem>
+            <IconGridItem>
+              <IconGridItemIcon>
+                <Icons name="structured-data" />
+              </IconGridItemIcon>
+              <h4>HTML5 Native</h4>
+              <IconGridItemCopy>
+                Start using next generation elements baked into HTML5 without
+                worrying about browser compatibility or extra code bloat.
+              </IconGridItemCopy>
+            </IconGridItem>
+            <IconGridItem>
+              <IconGridItemIcon>
+                <Icons name="developer-friendly" />
+              </IconGridItemIcon>
+              <h4>Developer Friendly</h4>
+              <IconGridItemCopy>
+                A weightless front-end architecture means you won't be
+                struggling to apply custom <code>CSS</code>.
+              </IconGridItemCopy>
+            </IconGridItem>
+            <IconGridItem>
+              <IconGridItemIcon>
+                <Icons name="pen-tool" />
+              </IconGridItemIcon>
+              <h4>Advanced Customizations</h4>
+              <IconGridItemCopy>
+                Design dropdowns, modals, heroes, and more to your heart's
+                content.
+              </IconGridItemCopy>
+            </IconGridItem>
+          </IconGrid>
+        </Container>
+      </Section>
+    </ThemeProvider>
   );
 }
 

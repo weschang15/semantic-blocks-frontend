@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import theme from "../../utils/theme";
 
 const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.lightestGray};
@@ -11,11 +12,13 @@ const StyledFooter = styled.footer`
 
 function Footer() {
   return (
-    <StyledFooter>
-      Developed by {` `}
-      <a href="https://wesleychang.me">Wesley Chang</a> &copy;{" "}
-      {new Date().getFullYear()}
-    </StyledFooter>
+    <ThemeProvider theme={theme}>
+      <StyledFooter>
+        Developed by {` `}
+        <a href="https://wesleychang.me">Wesley Chang</a> &copy;{" "}
+        {new Date().getFullYear()}
+      </StyledFooter>
+    </ThemeProvider>
   );
 }
 

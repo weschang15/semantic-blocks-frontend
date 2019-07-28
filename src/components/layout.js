@@ -7,20 +7,16 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { ThemeProvider } from "styled-components";
-import theme from "../utils/theme";
 import "normalize.css";
 import "./layout.css";
 import Footer from "./Footer/Footer";
 
 const Layout = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <main>{children}</main>
-        <Footer />
-      </>
-    </ThemeProvider>
+    <>
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 };
 
