@@ -7,5 +7,6 @@ export default {
     black: "rgba(38, 37, 35, 1)",
     yellow: "rgba(234, 189, 39, 1)",
     blue: "rgba(47, 59, 169, 1)",
+    green: "#29BF12"
   },
 };

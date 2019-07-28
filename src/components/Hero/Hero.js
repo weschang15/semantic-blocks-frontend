@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Illustration from "../../images/hero-illustration.svg";
-import { darken, transparentize } from "polished";
+import { darken, transparentize, lighten } from "polished";
 import { Anchor } from "../../elements/Links";
+import { Section } from "../../elements";
 
-const Section = styled.section`
-  background-color: #fff;
-  padding: 1.5em;
-`;
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
@@ -19,7 +16,7 @@ const Grid = styled.div`
   @media only screen and (min-width: 64em) {
     align-items: center;
     display: grid;
-    grid-template-columns: minmax(auto, 720px) minmax(500px, 720px);
+    grid-template-columns: minmax(auto, 720px) minmax(500px, 960px);
     justify-content: center;
     grid-column-gap: 2em;
   }
@@ -36,14 +33,10 @@ const Content = styled.div`
     display: inline-block;
     font-size: 16px;
     letter-spacing: 0.25px;
-    margin: 2em 0 0;
+    margin: 1em;
     text-decoration-color: ${({ theme }) => theme.colors.lightGray};
     &:hover {
       text-decoration-color: ${({ theme }) => theme.colors.darkGray};
-    }
-
-    @media only screen and (min-width: 30em) {
-      margin: 0 1em;
     }
   }
 `;
@@ -73,6 +66,7 @@ const DownloadLink = styled.a`
   line-height: 1;
   color: ${({ theme }) => theme.colors.white};
   transition: 125ms background-color ease-out, 125ms border-color ease-out;
+  text-align: center;
   font-weight: 600;
   &:focus {
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.white},
@@ -119,6 +113,13 @@ const Title = styled.h1`
   }
 `;
 
+const Footnote = styled.small`
+  display: block;
+  margin-top: 1em;
+  font-size: 14px;
+  color: ${({ theme }) => lighten(0.3, theme.colors.darkGray)};
+`;
+
 function Hero() {
   return (
     <Section>
@@ -139,7 +140,8 @@ function Hero() {
             >
               Download Now
             </DownloadLink>
-            <Anchor href="javascript:void(0);">Learn more</Anchor>
+            <Anchor to="/#demo">Watch a demo</Anchor>
+            <Footnote>Currently in beta...</Footnote>
           </Content>
           <Figure>
             <img
