@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Semantic Blocks`,
+    description: `Gutenberg Blocks optimized for on-page SEO and a rich user experience.`,
     author: `@gatsbyjs`,
   },
   plugins: [

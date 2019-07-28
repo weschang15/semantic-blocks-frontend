@@ -133,7 +133,8 @@ function Hero() {
                 <Underlined reversed>Blocks</Underlined>
               </Title>
               <Copy>
-                Gutenberg Blocks optimized for on-page SEO and Structured Data.
+                Gutenberg Blocks optimized for on-page SEO and a rich user
+                experience
               </Copy>
               <DownloadLink
                 href="https://github.com/weschang15/semantic-blocks/raw/v0.0.2/semantic-blocks.zip"
